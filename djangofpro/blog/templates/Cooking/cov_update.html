@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="mt-5">
+	<h1>Update Video</h1>
+<form  method="POST" enctype="multipart/form-data">
+	{%csrf_token%}
+	<h3>Caption</h3>{{form.caption}}
+	<br/>
+	<h3>Select Video</h3>{{form.video}}
+	{{form.author}}
+	<br>
+	<br>
+	<button class='btn btn-success btn-lg'>Update</button>
+
+</form>
+<script >
+		var name="{{user.id}}";
+		document.getElementById("covdo").value=name;
+	</script>
+	<style type="text/css">
+		h1{
+			text-align: center;
+		}
+	</style>
+</div>
+{%endblock%}

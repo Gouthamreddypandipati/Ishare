@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if user.is_authenticated %}
+	<h1> DELETE YOUR PAGE</h1>
+    {%if object.profile_pick.url%}
+	<img class="rounded-circle" src="{{object.profile_pick.url}}"width=200 height="200">
+    {%endif%}
+    <br/>
+    {{object.currentstatus}}
+    {{object.dateofbirth}}
+    {{object.facebook_id}}
+    {{object.instagram_id}}
+    {{object.whatsapp_number}}
+    {{object.twitter_id}}
+    {{object.linked_in_profile}}
+    {{object.youtubechannel_name}}
+    {{object.yourquote}}
+    <br/>
+    {% if object.author.id == user.id%}
+		<div class="form-group">
+			<form method="POST">
+				{%csrf_token %}
+				<button class="btn btn-secondary">DELETE</button>
+		</div>
+	{%endif%}
+{% else %}
+YOU ARE NOT ALLOWED HERE! PLEASE LOGIN FIRST AS USER...
+{%endif%}
+{%endblock%}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if user.is_authenticated %}
+    <h1> Add a Exercise Post </h1>
+    <br/><br/>
+    <div class="form-group">
+	    <form method="POST" enctype="multipart/form-data">
+		    {%csrf_token %}
+		    {{ form.as_p}}
+		    <button class="btn btn-secondary">Post</button>
+    </div>
+    
+    <script >
+    	var name="{{user.id}}";
+    	document.getElementById("exercise").value=name;
+    </script>
+    <style type="text/css">
+        h1{
+            text-align: center;
+        }
+    </style>
+{% else %}
+YOU ARE NOT ALLOWED HERE! PLEASE LOGIN FIRST AS USER...
+{%endif%}
+{%endblock%}

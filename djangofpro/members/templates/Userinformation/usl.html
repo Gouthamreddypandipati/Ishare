@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{%load static %}
+{% block content %}
+{% if user.is_authenticated %}
+	<h1> USERS </h1>
+	<ul>
+	{% for post in object_list %}
+		<div class="card" style="width: 18rem;">
+			{%if post.profile_pick%}
+        	    <img class="rounded-circle" src="{{post.profile_pick.url}}" height=100 width=100>
+        	{%endif%}
+  			<div class="card-body">
+    			<h5 class="card-title">{{post.author}}</h5>
+    			<p class="card-text">watch full details</p>
+    			<a href="{% url 'usdetail' post.id %}" class="btn btn-primary">VIEW FULL</a>
+  			</div>
+		</div>
+
+	<br></br>	
+	{% if post.author.id == user.id%}
+		<a href="{% url  'userupd' post.pk%}" class="btn btn-dark">update</a>
+		<a href="{% url  'userdel' post.pk%}" class="btn btn-danger">Delete</a>
+	{%endif%}
+<hr>	
+		</li>
+	{% endfor%}
+	</ul>
+{% else %}
+YOU ARE NOT ALLOWED HERE! PLEASE LOGIN FIRST AS USER...
+{%endif%}
+{% endblock %}

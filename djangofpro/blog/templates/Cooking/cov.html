@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1> Add Cooking Video </h1>
+<div class="mt-5">
+<form  method="POST" enctype="multipart/form-data" onsubmit="onFormSubmit()">
+	{%csrf_token%}
+	<h3>Caption</h3>{{form.caption}}
+	<br/>
+	<h3>Select Video</h3>{{form.video}}
+	<br>
+	{{form.author}}
+	<br>
+	<button class='btn btn-success btn-lg'>UPLOAD</button>
+</form>
+<br>
+<div class="spinner-border" role="status" id="spinner">
+  <span class="visually-hidden">UpLoading...</span>
+</div>
+<br><br>
+{%for message in  messages%}
+	<div class="alert alert-success alert-dismissible fade show justify-content-center" role="alert">
+		<strong>SUCCESSFULL!</strong><p>{{message}}</p>
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+{%endfor%}
+<style type="text/css">
+	#spinner{
+		margin-left: 50%;
+	}
+	h1{
+		text-align: center;
+	}
+</style>
+
+<script >
+		var name="{{user.id}}";
+		document.getElementById("covdo").value=name;
+		spinne=document.getElementById('spinner')
+		spinne.classList.remove('spinner-border')
+		function onFormSubmit() {
+			spinne.classList.add('spinner-border')
+        
+      }
+
+	</script>
+</div>
+{%endblock%}

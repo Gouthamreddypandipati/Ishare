@@ -1,0 +1,49 @@
+@media only screen and (max-device-width:1024px)
+{
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+html{
+	font-size: 62.5%;
+}
+body{
+	background-color: rgb(60,60,60);
+	justify-content: center;
+	align-items: center;
+}
+.container{
+	margin-top: 0rem;
+	padding: 0rem;
+	height: auto;
+	align-items: center;
+	overflow: hidden; 
+}
+.container img{
+	width: 100%;
+	height: auto;
+	border: solid white 2px;
+}
+.container-content{
+	background-color: white;
+	align-items: center;
+	justify-content: center;
+	padding: 1.5px;
+	text-align: center;
+	color:black;
+	font-size: 2rem;
+}
+.btn-up{
+	background-color: red;
+	font-size: 2rem;
+	color: white;
+	border-radius: 10rem; 
+	text-decoration: none;
+	margin-top: 2rem;
+	padding: .5rem;
+	align-items: center;
+	border: 2px blue solid;
+
+}
+}

@@ -1,0 +1,276 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if user.is_authenticated %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<form   method="GET" class="example" action="search">
+  <input type="text" placeholder="Search..try username to get all posts of the user" name="querys" id="query">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+<!-- The form -->
+ <h2>search results in Exercises:</h2>
+ {%if allpostsex|length < 1%}
+<p>Your search  - <strong> did not match any documents in exercise.</strong>
+<br/>
+Suggestions:
+<br/>
+ .Make sure that all words are spelled correctly.
+<br/>
+.Try different keywords.
+<br/>
+.Try more general keywords</p>
+{%endif%}
+{%if allpostsex %}
+    {% for post in allpostsex %}
+		<li>{{post.title}}-{{post.author}}-ON {{post.date}}<br>
+		<br></br>
+		{% if post.header_image%}	
+			<img src="{{post.header_image.url}}" width=100% height="auto">
+		{%endif%}
+		<br></br>
+		{{post.text}}
+		<br></br>
+    {% endfor%}
+{%endif%}
+<hr>
+<h2>search results in Entertainment:</h2>
+ {%if allpostsen|length < 1%}
+<p>Your search  - <strong> did not match any documents in entertainment.</strong>
+<br/>
+Suggestions:
+<br/>
+ .Make sure that all words are spelled correctly.
+<br/>
+.Try different keywords.
+<br/>
+.Try more general keywords</p>
+{%endif%}
+{%if allpostsen %}
+    {% for post in allpostsen %}
+    <li>{{post.title}}-{{post.author}}-ON {{post.date}}<br>
+    <br></br>
+    {% if post.header_image%} 
+      <img src="{{post.header_image.url}}" width=100% height="auto">
+    {%endif%}
+    <br></br>
+    {{post.text}}
+    <br></br>
+    {% endfor%}
+{%endif%}
+<hr>
+<h2>search results In Education:</h2>
+ {%if allpostsed|length < 1%}
+<p>Your search  - <strong> did not match any documents in education.</strong>
+<br/>
+Suggestions:
+<br/>
+ .Make sure that all words are spelled correctly.
+<br/>
+.Try different keywords.
+<br/>
+.Try more general keywords</p>
+{%endif%}
+{%if allpostsed %}
+    {% for post in allpostsed %}
+    <li>{{post.title}}-{{post.author}}-ON {{post.date}}<br>
+    <br></br>
+    {% if post.header_image%} 
+      <img src="{{post.header_image.url}}" width=100% height="auto">
+    {%endif%}
+    <br></br>
+    {{post.text}}
+    <br></br>
+    {% endfor%}
+{%endif%}
+<hr>
+<h2>search results In Sports:</h2>
+ {%if allpostss|length < 1%}
+<p>Your search  - <strong> did not match any documents in sports.</strong>
+<br/>
+Suggestions:
+<br/>
+ .Make sure that all words are spelled correctly.
+<br/>
+.Try different keywords.
+<br/>
+.Try more general keywords</p>
+{%endif%}
+{%if allpostss %}
+    {% for post in allpostss %}
+    <li>{{post.title}}-{{post.author}}-ON {{post.date}}<br>
+    <br></br>
+    {% if post.header_image%} 
+      <img src="{{post.header_image.url}}" width=100% height="auto">
+    {%endif%}
+    <br></br>
+    {{post.text}}
+    <br></br>
+    {% endfor%}
+{%endif%}
+<hr>
+<h2>search results In Agriculture:</h2>
+ {%if allpostsag|length < 1%}
+<p>Your search  - <strong> did not match any documents in agriculture.</strong>
+<br/>
+Suggestions:
+<br/>
+ .Make sure that all words are spelled correctly.
+<br/>
+.Try different keywords.
+<br/>
+.Try more general keywords</p>
+{%endif%}
+{%if allpostsag %}
+    {% for post in allpostsag %}
+    <li>{{post.title}}-{{post.author}}-ON {{post.date}}<br>
+    <br></br>
+    {% if post.header_image%} 
+      <img src="{{post.header_image.url}}" width=100% height="auto">
+    {%endif%}
+    <br></br>
+    {{post.text}}
+    <br></br>
+    {% endfor%}
+{%endif%}
+<hr>
+<h2>search results in TOURISM:</h2>
+ {%if allpostst|length < 1%}
+<p>Your search  - <strong> did not match any documents in entertainment.</strong>
+<br/>
+Suggestions:
+<br/>
+ .Make sure that all words are spelled correctly.
+<br/>
+.Try different keywords.
+<br/>
+.Try more general keywords</p>
+{%endif%}
+{%if allpostst %}
+    {% for post in allpostst %}
+    <li>{{post.title}}-{{post.author}}-ON {{post.date}}<br>
+    <br></br>
+    {% if post.header_image%} 
+      <img src="{{post.header_image.url}}" width=100% height="auto">
+    {%endif%}
+    <br></br>
+    {{post.text}}
+    <br></br>
+    {% endfor%}
+{%endif%}
+<hr>
+<h2>search results in DEVOTINAL:</h2>
+ {%if allpostsd|length < 1%}
+<p>Your search  - <strong> did not match any documents in entertainment.</strong>
+<br/>
+Suggestions:
+<br/>
+ .Make sure that all words are spelled correctly.
+<br/>
+.Try different keywords.
+<br/>
+.Try more general keywords</p>
+{%endif%}
+{%if allpostsd %}
+    {% for post in allpostsd %}
+    <li>{{post.title}}-{{post.author}}-ON {{post.date}}<br>
+    <br></br>
+    {% if post.header_image%} 
+      <img src="{{post.header_image.url}}" width=100% height="auto">
+    {%endif%}
+    <br></br>
+    {{post.text}}
+    <br></br>
+    {% endfor%}
+{%endif%}
+<hr>
+<h2>search results in HEALTH:</h2>
+ {%if allpostsh|length < 1%}
+<p>Your search  - <strong> did not match any documents in HEALTH</strong>
+<br/>
+Suggestions:
+<br/>
+ .Make sure that all words are spelled correctly.
+<br/>
+.Try different keywords.
+<br/>
+.Try more general keywords</p>
+{%endif%}
+{%if allpostsd %}
+    {% for post in allpostsd %}
+    <li>{{post.title}}-{{post.author}}-ON {{post.date}}<br>
+    <br></br>
+    {% if post.header_image%} 
+      <img src="{{post.header_image.url}}" width=100% height="auto">
+    {%endif%}
+    <br></br>
+    {{post.text}}
+    <br></br>
+    {% endfor%}
+{%endif%}
+<hr>
+<h2>search results in OTHERS:</h2>
+ {%if allpostso|length < 1%}
+<p>Your search  - <strong> did not match any documents in OTHERS.</strong>
+<br/>
+Suggestions:
+<br/>
+ .Make sure that all words are spelled correctly.
+<br/>
+.Try different keywords.
+<br/>
+.Try more general keywords</p>
+{%endif%}
+{%if allpostso %}
+    {% for post in allpostso %}
+    <li>{{post.title}}-{{post.author}}-ON {{post.date}}<br>
+    <br></br>
+    {% if post.header_image%} 
+      <img src="{{post.header_image.url}}" width=100% height="auto">
+    {%endif%}
+    <br></br>
+    {{post.text}}
+    <br></br>
+    {% endfor%}
+{%endif%}
+{% else %}
+YOU ARE NOT ALLOWED HERE! PLEASE LOGIN FIRST AS USER...
+{%endif%}
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Style the search field */
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+/* Style the submit button */
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+{% endblock %}

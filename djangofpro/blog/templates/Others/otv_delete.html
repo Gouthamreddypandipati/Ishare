@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if user.is_authenticated %}
+	<h1> Delete Video</h1>
+	<br/><br/>
+	<h3 class='text-center mt-2 mb-2'>{{iteam.caption}}</h3>
+    <video class="embed-responsive embed-responsive-16by9" controls="controls" width=100% height="auto">
+    	<source src="{{iteam.video.url}}" type="video/mp4"/>
+    </video>
+    <h4>{{iteam.text}}</h4>
+	<br></br>
+	{% if iteam.author.id == user.id%}
+		<div class="form-group">
+			<form method="POST">
+				{%csrf_token %}
+				<button class="btn btn-secondary">DELETE</button>
+		</div>
+	{%endif%}
+		<style type="text/css">
+		h3,h1{
+			text-align: center;
+		}
+	</style>
+{% else %}
+YOU ARE NOT ALLOWED HERE! PLEASE LOGIN FIRST AS USER...
+{%endif%}
+{%endblock%}

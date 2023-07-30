@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if user.is_authenticated %}
+    {%if object.profile_pick%}
+    <img class="rounded-circle" src="{{object.profile_pick.url}}" width="200" height="200">
+    {%else%}
+    NO PROFILE
+    {%endif%}
+    <br/>
+    <br/>
+    <h3 class="btn btn-info">DESIGNATION</h3>-{{object.currentstatus}}
+    </br>
+    <h3 class="btn btn-primary">DATE-OF-BIRTH</h3>-{{object.dateofbirth}}
+    </br>
+    <h3 class="btn btn-secondary">FACEBOOK-ID</h3>-{{object.facebook_id}}
+    </br>
+    <h3 class="btn btn-success">INSTAGRAM-ID</h3>-{{object.instagram_id}}
+    </br>
+    <h3 class="btn btn-danger">WHATSAPP-NUMBER</h3>-{{object.whatsapp_number}}
+    </br>
+    <h3 class="btn btn-info">TWITTER</h3>-{{object.twitter_id}}
+    </br>
+    <h3 class="btn btn-light">LINKED-IN</h3>-{{object.linked_in_profile}}
+    </br>
+    <h3 class="btn btn-primary">YOUTUBE-CHANNEL-NAME</h3>-{{object.youtubechannel_name}}
+    </br>
+    <h3 class="btn btn-dark">QUOTE</h3>-{{object.yourquote}}
+    </br>
+	{% if object.author.id == user.id%}
+		<a href="{% url  'userupd' object.pk%}" class="btn btn-dark">update</a>
+		<a href="{% url  'userdel' object.pk%}" class="btn btn-danger">Delete</a>
+	{%endif%}
+{% else %}
+	YOU ARE NOT ALLOWED HERE! PLEASE LOGIN FIRST AS USER...
+{%endif%}
+{% endblock%}

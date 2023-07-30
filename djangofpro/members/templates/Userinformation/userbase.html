@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<div >
+<br></br>        
+ <h1>CLICK ON THE ITEM TO SEE POSTS </h1>
+ <br></br>    
+ <a href="{% url 'userpag' user.id%}" ><h2 align="center" class="btn btn-success">ADD DETAILS</h2></a>
+ <a href="{% url 'uslis'%}" ><h2 align="center" class="btn btn-success">ALL USER PROFILE PAGE</h2></a>
+{%endblock%}
